@@ -1,30 +1,38 @@
+var Height
+var Width
+var Depth
+var Sweep
 function doInputOutput() {
-    document.getElementById("Height")
-    document.getElementById("Width")
-    document.getElementById("length")
-    document.getElementById("Sweep")
-    let A = "Height";
-    let B = "Width";
-    let C = "length";
-
-    function houseVolume(Width, length, height, sweep) {
-        document.getElementById("livingVolume" + "roofVolume")
-        return houseVolume(value)
+    Height = parseInt(document.getElementById("Height").value)
+    Width = parseInt(document.getElementById("Width").value)
+    Depth = parseInt(document.getElementById("Depth").value)
+    Sweep = parseInt(document.getElementById("Sweep").value)
+    if (checkInput(Height) && checkInput(Width) && checkInput(Depth) && checkInput(Sweep)) {
+        let volume = houseVolume()
+        document.getElementById("outputDiv").innerHTML = volume
     }
-    function livingVolume(width, length, height) {
-        document.getElementById("Width" * "Length" * "Height")
-        return livingVolume(value)
+    else{
+        document.getElementById("outputDiv").innerHTML = "Invalid Input"
     }
-    function roofVolume(width, length, sweep) {
-        document.getElementById(triangleArea * "Width")
-        return roofVolume(value)
+}
+function houseVolume() {
+    return livingVolume() + roofVolume()
+}
+function livingVolume() {
+    return Width * Depth * Height
+}
+function roofVolume() {
+    return triangleArea() * Width
+}
+function triangleArea() {
+    return (Height + Width + Sweep) / 2
+}
+function checkInput (value) {
+    if (value == undefined) {
+        return false
     }
-    function triangleArea(A, B, C) {
-        let s = (("A" + "B" + "C") / 2)
-
+    if (value.length == 0) {
+        return false
     }
-    document.querySelector("#btn").addEventListener("click", () => {
-        alert(doInputOutput(Cost.value)).Cost
-    }
-    )
+    return isFinite(value)
 }
