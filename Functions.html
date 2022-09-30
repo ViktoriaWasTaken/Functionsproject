@@ -2,8 +2,8 @@
 
 <head>
     <title>a</title>
-    <link rel="stylesheet" href="Functions.css" type="text/css">
-    <script src="Funtions.js"></script>
+    <link rel="stylesheet" href="Function.css" type="text/css">
+    <script src="Function.js"></script>
 </head>
 <body id="body">
     <div id="stylediv">
@@ -14,15 +14,13 @@
             <label class="label">Width:</label>
             <input class="label" placeholder="ExampleWidth" type="number" id="Width">
             <label class="label">Length:</label>
-            <input class="label" placeholder="ExampleLength" type="number" id="Length">
+            <input class="label" placeholder="ExampleDepth" type="number" id="Depth">
             <label class="label">Sweep:</label>
             <input class="label" placeholder="ExampleSweep" type="number" id="Sweep">
-            <button id="btn" type="button">Find your time</button>
-           <p id="output"></p>
-           <script>
-            document.getElementById("output").innerHTML = doInputOutput;
-            </script>
-            <div id="outputDiv"></div>
+            <button id="btn" type="button" onclick="doInputOutput()">Submit</button>
+            <div id="outputDivDiv">
+                <P id="outputDiv"></P>
+            </div>
             <box></box>
         </section>
         <br />
